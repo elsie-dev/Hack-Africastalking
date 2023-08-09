@@ -34,15 +34,15 @@
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Demo
+<!-- ## Demo
 
-Check out the website: [coverletter.web]()
+Check out the website: [coverletter.web]() -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## <p id="getting_started">Getting Started</p>
 
-To get a local copy, follow these simple steps.
+Follow these simple steps:
 
 ### <p id="prerequisites">Prerequisites</p>
 
@@ -76,6 +76,19 @@ Before installation, please make sure you have already installed the following t
     ```bash
     npm run dev
     ```
+5. Navigate to client Directory
+
+    ```bash
+     cd client
+    ```
+
+6. Install dependencies with `npm install`
+
+    ```bash
+      npm start
+    ```
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -88,8 +101,3 @@ Before installation, please make sure you have already installed the following t
 -   Check out the [contribution guidelines](/client/CONTRIBUTING.md) for more information.
 -   Check out the [contribution guidelines for V2](/client-v2/README.md) for more information.
 
-<!-- ## 👩🏽‍💻 Contributing
-
-[![Contributors](https://contrib.rocks/image?repo=/workshopapps/coverletter.web)](https://github.com//workshopapps/coverletter.web/graphs/contributors) -->
-
-<!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
