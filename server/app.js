@@ -1,3 +1,4 @@
+// Elastic Search APM for error logs
 // var apm = require("elastic-apm-node").start({
 // 	serviceName: "Coverly-api",
 // 	secretToken: "",
