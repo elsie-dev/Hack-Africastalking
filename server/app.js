@@ -5,7 +5,7 @@
 // 	serverUrl: "http://localhost:8200",
 // 	environment: "production",
 // });
-require("express-async-errors");
+const asyncErrors=require("express-async-errors");
 const express = require("express");
 const swaggerUI = require("swagger-ui-express");
 const swaggerDocument = require("./utils/swagger.json");
