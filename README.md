@@ -32,13 +32,6 @@
 </tbody>
   </table>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ## Demo
-
-Check out the website: [coverletter.web]() -->
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## <p id="getting_started">Getting Started</p>
 
@@ -88,16 +81,9 @@ Before installation, please make sure you have already installed the following t
       npm start
     ```
 
+## Cloud Infrastructure Setup
 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## <p id="server">To set up client</p>
-
--   [Set up client](/client/README.md)
-
-## <p id="contribute">Contributing</p>
-
--   Check out the [contribution guidelines](/client/CONTRIBUTING.md) for more information.
--   Check out the [contribution guidelines for V2](/client-v2/README.md) for more information.
-
+- [x] Setting up Dockerfiles for both Client and Server application
+- [x] Setting up Docker Compose for both
+- [x] CICD: Pipelines
+- [x] Deployment to AWS Cloud Elastic Search
