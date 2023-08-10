@@ -87,3 +87,4 @@ Before installation, please make sure you have already installed the following t
 - [x] Setting up Docker Compose
 - [x] CICD: Pipelines
 - [x] Deployment to AWS
+- [x] Metrics SetUp
