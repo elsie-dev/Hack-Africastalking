@@ -84,6 +84,6 @@ Before installation, please make sure you have already installed the following t
 ## Cloud Infrastructure Setup
 
 - [x] Setting up Dockerfiles for both Client and Server application
-- [x] Setting up Docker Compose for both
+- [x] Setting up Docker Compose
 - [x] CICD: Pipelines
-- [x] Deployment to AWS Cloud Elastic Search
+- [x] Deployment to AWS
