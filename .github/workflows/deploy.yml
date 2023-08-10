@@ -1,6 +1,7 @@
 name: Build images then Deploy 
 on:
-  pull_request:
+#   pull_request:
+  push:
     branches:
       - main
 jobs:
@@ -31,6 +32,7 @@ jobs:
 #           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 #         run: |
 
+
 #           docker build -t client-hack:latest -f client/Dockerfile ./client
 #           docker build -t server-hack:latest -f server/Dockerfile ./server
 #           # docker build -t mongo-db:latest -f /Dockerfile services/mongo-db
@@ -40,6 +42,7 @@ jobs:
 #           docker push ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:client-hack
 #           docker push ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:server-hack
 #           # docker push ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:mongo
+
 
       - name: Build React App
         run: npm install && npm run build

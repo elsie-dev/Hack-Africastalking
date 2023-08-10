@@ -37,7 +37,8 @@ Before installation, ensure you have already installed the following tools:
 
     ```bash
     npm run dev
-    ```
+
+   .................
 5. Navigate to the client Directory
 
     ```bash
@@ -50,12 +51,10 @@ Before installation, ensure you have already installed the following tools:
       npm start
     ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Cloud Infrastructure Setup
 - [x] Setting up Dockerfiles for the Client and Server
-- [x] Setting up Docker Compose 
-- [x] CICD: Pipelines
-- [x] Deployment to AWS Cloud
-
+- [x] Setting up Docker Compose
+- [x] CI/CD: Pipelines
+- [x] Deployment to AWS
+- [x] Metrics SetUp
 
