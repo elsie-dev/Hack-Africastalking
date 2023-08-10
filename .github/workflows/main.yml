@@ -22,14 +22,14 @@ jobs:
       - name: Build and push Docker images
         run: |
           cd client/
-          docker build -t hack254/client .
-          docker tag hack254/client elsiedev/hack254:client
-          docker push elsiedev/hack254:hack254/client 
+          docker build -t client .
+          docker tag client elsiedev/hack254:client
+          docker push elsiedev/hack254:client
           cd ..
           cd server/
-          docker build -t hack254/server .
-          docker tag hack254/server elsiedev/hack254:server
-          docker push elsiedev/hack254:hack254/server
+          docker build -t server .
+          docker tag server elsiedev/hack254:server
+          docker push elsiedev/hack254:server
  
           
           
