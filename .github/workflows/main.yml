@@ -21,8 +21,9 @@ jobs:
 
       - name: Build and push Docker images
         run: |
-          docker build -t client-hack/latest -f client/Dockerfile .
-          docker build -t server-hack/latest -f client/Dockerfile .
+         
+          docker build -f client\Dockerfile --force-rm -t client/hack1 .
+          docker build -f server\Dockerfile --force-rm -t server/hack2 .
           
 
 #       - name: Deploy to S3
