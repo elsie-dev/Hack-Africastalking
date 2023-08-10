@@ -31,8 +31,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
 
-          docker build -t client-hack:latest -f client/Dockerfile ./client
-          docker build -t server-hack:latest -f server/Dockerfile ./server
+          docker build -t client-hack:latest -f client/Dockerfile client
+          docker build -t server-hack:latest -f server/Dockerfile server
           # docker build -t mongo-db:latest -f /Dockerfile services/mongo-db
           docker tag client-hack:latest ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:client-hack
           docker tag server-hack:latest ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:server-hack
