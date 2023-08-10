@@ -49,7 +49,7 @@ Before installation, ensure you have already installed the following tools:
     ```bash
       npm start
     ```
-
+    
 ## Cloud Infrastructure Setup
 - [x] Setting up Dockerfiles for the Client and Server
 - [x] Setting up Docker Compose
