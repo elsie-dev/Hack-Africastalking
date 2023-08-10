@@ -1,0 +1,45 @@
+name: Build images then Deploy 
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to ECR
+        run: |
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.ECR_ACCOUNT }}
+
+      - name: Build,tag and push Docker images
+        env:
+          ECR_ACCOUNT: ${{ secrets.ECR_ACCOUNT }}
+          ECR_REPOSITORY: twala
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+
+          docker build -t client-hack:latest -f client/Dockerfile ./client
+          docker build -t server-hack:latest -f server/Dockerfile ./server
+          # docker build -t mongo-db:latest -f /Dockerfile /mongo-db
+          docker tag client-hack:latest ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:client-hack
+          docker tag server-hack:latest ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:server-hack
+          docker tag mongo:latest ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:mongo
+          docker push ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:client-hack
+          docker push ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:server-hack
+          # docker push ${{ secrets.ECR_ACCOUNT }}/$ECR_REPOSITORY:mongo
+
+      - name: Deploy App Build to S3 Bucket
+        run: aws s3 sync ./build/ s3://cover23test --delete
