@@ -43,14 +43,14 @@ jobs:
 #             sudo docker-compose up -d
           
           
-      - name: Deploy to Server 1
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
-          REMOTE_HOST: ${ { secrets.HOST_DNS }}
-          REMOTE_USER: ${ { secrets.USERNAME }}
-          script: |
-            sudo docker pull elsiedev/hack254:client
-            sudo docker pull elsiedev/hack254:server
-            sudo docker-compose up -d
+#       - name: Deploy to Server 1
+#         uses: easingthemes/ssh-deploy@main
+#         env:
+#           SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
+#           REMOTE_HOST: ${ { secrets.HOST_DNS }}
+#           REMOTE_USER: ${ { secrets.USERNAME }}
+#           script: |
+#             sudo docker pull elsiedev/hack254:client
+#             sudo docker pull elsiedev/hack254:server
+#             sudo docker-compose up -d
    
