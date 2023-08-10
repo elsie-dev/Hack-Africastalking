@@ -22,7 +22,17 @@ jobs:
       - name: Build and push Docker images
         run: |
           cd client/
-          docker build -t client .
+          docker build -t client .        
+          docker tag client:latest $DOCKERHUB_USERNAME/client:latest
+          docker push $DOCKERHUB_USERNAME/client:latest
+          cd ..
+
+          cd server/
+          docker build -t server .
+          docker tag server:latest $DOCKERHUB_USERNAME/server:latest
+          docker push $DOCKERHUB_USERNAME/server:latest
+          
+          
 
        
 #       - name: Deploy to S3
