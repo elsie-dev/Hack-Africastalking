@@ -3,8 +3,8 @@ ENV NODE_ENV development
 
 WORKDIR /server
 
-COPY package.json .
-COPY package-lock.json .
+COPY package*.json ./
+# COPY package-lock.json .
 
 RUN npm install -g nodemon
 COPY . .
