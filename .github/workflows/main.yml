@@ -32,8 +32,8 @@ jobs:
           docker push elsiedev/hack254:server
  
       - name: Deploy to EC2 instance
-        uses: appleboy/ssh-action@v0.4.0
-        with:
+        uses: easingthemes/ssh-deploy@main
+        with: 
           host: ${{ secrets.EC2_HOST }}     # EC2 instance IP or DNS
           username: ${{ secrets.EC2_USER }} # EC2 instance SSH username
           password: ${{ secrets.EC2_PASS }} # EC2 instance SSH password (or use private key)
